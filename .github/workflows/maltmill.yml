@@ -15,7 +15,7 @@ jobs:
         with:
           go-version: '1.23.0' # same to maltmill
       - run: |
-          go install github.com/Songmu/maltmill/cmd/maltmill@449ce794bf255d2303e24266e8048f555b26e974 # v1.2.1
+          go install github.com/KengoTODA/maltmill/cmd/maltmill@82c181c94bdb721d629aa9cd8271dc8df8ec4d9c # v1.3.0-pre
           maltmill -w inspequte.rb
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
