@@ -1,0 +1,30 @@
+name: Update formula files
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '03 06 * * *'
+
+jobs:
+  update:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
+        with:
+          go-version: '1.23.0' # same to maltmill
+      - run: |
+          go install github.com/Songmu/maltmill/cmd/maltmill@449ce794bf255d2303e24266e8048f555b26e974 # v1.2.1
+          maltmill -w inspequte.rb
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add inspequte.rb
+          if ! git diff --quiet --staged; then
+            git commit -m "Update inspequte formula"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
