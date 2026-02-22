@@ -1,28 +1,28 @@
 class Inspequte < Formula
   desc 'Fast, CLI-first static analysis tool for JVM class and JAR files. Designed for coding agents.'
   homepage 'https://github.com/KengoTODA/inspequte'
-  version '0.22.0'
+  version '0.22.1'
   license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.0/inspequte-inspequte-v0.22.0-arm64-apple-darwin.tar.gz'
-      sha256 '5b52c0a7bbb6dcff925bbd34be682084c21462228763bf8595d3afaca694cd0b'
+      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.1/inspequte-inspequte-v0.22.1-arm64-apple-darwin.tar.gz'
+      sha256 '8d03d5d5d1b45c76bafeff2fe3bac7a91e9607eaec33b04e86c1c77614e217c0'
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.0/inspequte-inspequte-v0.22.0-amd64-apple-darwin.tar.gz'
-      sha256 '87bcf8905f8b68c7cbe938ddc7dbb95ca0ed2e0b583499f56d618316dad926f1'
+      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.1/inspequte-inspequte-v0.22.1-amd64-apple-darwin.tar.gz'
+      sha256 '083a2215bfeb3353bf7ff0cb4ae2f3e0bfab369e6367d2388d0c1453d7aafcaa'
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.0/inspequte-inspequte-v0.22.0-arm64-unknown-linux-gnu.tar.gz'
-      sha256 '648e0d7695a417cf8bd96a9d4f1fabde44e90ae9e61cf4eb81c67af32842ffdd'
+      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.1/inspequte-inspequte-v0.22.1-arm64-unknown-linux-gnu.tar.gz'
+      sha256 '2177a1736f346022362cae3099006f2257fda50d5aada6fb9bbbb49759b62634'
     end
     if Hardware::CPU.intel?
-      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.0/inspequte-inspequte-v0.22.0-amd64-unknown-linux-gnu.tar.gz'
-      sha256 '694c7fd4ed0f071ea2fb84e5dc22bb6759f249978dc6c83aa97e2513d3048649'
+      url 'https://github.com/KengoTODA/inspequte/releases/download/inspequte-v0.22.1/inspequte-inspequte-v0.22.1-amd64-unknown-linux-gnu.tar.gz'
+      sha256 '63c13ecef047cca9130e3c9c4df8a3fd365ea0fb96552b5b251ee5fc1d070624'
     end
   end
  
